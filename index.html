@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Deformable Neural Radiance Fields creates free-viewpoint portraits (nerfies) from casually captured videos.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LasUIE: Unifying Information Extraction with Latent Adaptive Structure-aware Generative Language Model</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.icon">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">LasUIE: <br>Unifying Information Extraction with Latent Adaptive Structure-aware Generative Language Model</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"> <a href="https://haofei.vip/">Hao Fei</a><sup>1</sup>,</span>
+            <span class="author-block"> <a href="https://chocowu.github.io/">Shengqiong Wu</a><sup>1</sup>,</span>
+            <span class="author-block"> <a href="https://ljynlp.github.io">Jingye Li</a><sup>2</sup>,</span>
+            <span class="author-block"> <a href="#">Bobo Li</a><sup>2</sup>, </span>
+            <span class="author-block"> <a href="#">Fei Li</a><sup>2</sup>, </span><br>
+            <span class="author-block"> <a href="#">Libo Qin</a><sup>1</sup>, </span>
+            <span class="author-block"> <a href="https://zhangmeishan.github.io/">Meishan Zhang</a><sup>3</sup>, </span>
+            <span class="author-block"> <a href="https://zhangminsuda.github.io/">Min Zhang</a><sup>3</sup>, </span>
+            <span class="author-block"> <a href="https://www.chuatatseng.com/">Tat-Seng Chua</a><sup>1</sup>,</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Sea-NExT Joint Lab, National University of Singapore,</span><br>
+            <span class="author-block"><sup>2</sup>Wuhan University,</span>&nbsp;&nbsp;
+            <span class="author-block"><sup>3</sup>Harbin Institute of Technology (Shenzhen)</span>
+          </div>
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2304.06248.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2304.06248"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ChocoWu/LasUIE"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+
+<!--              &lt;!&ndash; Video Link. &ndash;&gt;-->
+<!--              <span class="link-block">-->
+<!--                <a href="./static/media/paper-intro-468-recd.mp4"-->
+<!--                   class="external-link button is-normal is-rounded is-dark">-->
+<!--                  <span class="icon">-->
+<!--                      <i class="fab fa-youtube"></i>-->
+<!--                  </span>-->
+<!--                  <span>Video</span>-->
+<!--                </a>-->
+<!--              </span>-->
+
+              <!-- Poster Link. -->
+              <span class="link-block">
+              <a href="./static/media/poster_landscape_NIPS22_LasUIE.pdf" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <svg class="svg-inline--fa fa-chalkboard fa-w-20" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chalkboard" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg=""><path fill="currentColor" d="M96 64h448v352h64V40c0-22.06-17.94-40-40-40H72C49.94 0 32 17.94 32 40v376h64V64zm528 384H480v-64H288v64H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16z"></path></svg><!-- <i class="fas fa-chalkboard"></i> Font Awesome fontawesome.com -->
+                </span>
+                <span>Poster</span>
+              </a>
+            </span>
+
+              <!-- Dataset Link. -->
+<!--              <span class="link-block">-->
+<!--                <a href="https://github.com/google/nerfies/releases/tag/0.1"-->
+<!--                   class="external-link button is-normal is-rounded is-dark">-->
+<!--                  <span class="icon">-->
+<!--                      <i class="far fa-images"></i>-->
+<!--                  </span>-->
+<!--                  <span>Data</span>-->
+<!--                  </a>                -->
+<!--              </span>-->
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Universally modeling all typical information extraction tasks (UIE) with one generative language model (GLM) has revealed great potential by the latest study,
+            where various IE predictions are unified into a linearized hierarchical expression under a GLM.
+            Syntactic structure information, a type of effective feature which has been extensively utilized in IE community, should also be beneficial to UIE.
+            In this work, we propose a novel structure-aware GLM, fully unleashing the power of syntactic knowledge for UIE. A heterogeneous structure inductor is explored
+            to unsupervisedly induce rich heterogeneous structural representations by posttraining an existing GLM.
+            In particular, a structural broadcaster is devised to compact various latent trees into explicit high-order forests, helping to guide a
+            better generation during decoding. We finally introduce a task-oriented structure fine-tuning mechanism, further adjusting the learned structures to most coincide
+            with the end-task’s need.
+            Over 12 IE benchmarks across 7 tasks our system shows significant improvements over the baseline UIE system.
+            Further in-depth analyses show that our GLM learns rich task-adaptive structural bias that greatly resolves the UIE crux, the long-range dependence issue and boundary identifying.
+          </p>
+<!--          <br>-->
+<!--        <div class="publication-video">-->
+<!--          <center><img width="80%" src="./static/images/intro.png"></center>-->
+<!--        </div>-->
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+</section>
+
+
+
+
+<section class="section" style="margin-top: 0px">
+  <div class="container is-max-desktop">
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Presentation</h2>
+        <div class="publication-image">
+          <iframe src="https://nusu-my.sharepoint.com/personal/haofei37_nus_edu_sg/_layouts/15/Doc.aspx?sourcedoc={000c656c-172b-4562-b744-1e6cf2055cdf}&amp;action=embedview&amp;wdAr=1.7777777777777777" width='100%' height='454px' frameborder="0">This is an embedded <a target="_blank" href="https://office.com">Microsoft Office</a> presentation, powered by <a target="_blank" href="https://office.com/webapps">Office</a>.</iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Paper intro. -->
+    <div class="columns is-centered has-text-centered">
+
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+
+        <h2 class="title is-5" style="text-align:left">1. Modeling Universal Information Extraction (UIE)</h2>
+          <p style="text-align:justify"><a href="https://aclanthology.org/2022.acl-long.395">UIE</a> has been proposed to unify all information extraction tasks in NLP community, which converts the structure prediction of IE tasks universally into the sequence prediction via generative LMs.
+        All IE jobs essentially revolves around predicting two key elements: <<b>mention spans</b>> or/and their <<b>semantic relations</b>>.
+            In this project, we thus reduce all the IE tasks into three prototypes: <b>span extraction</b>, <b>pair extraction</b> and <b>hyper-pair extraction</b>:
+        </p><br>
+        <div class="publication-image">
+          <center><img width="90%" src="./static/images/UIE_intro.png"></center>
+        </div>
+        <br>
+
+        <div class="publication-image" style="text-align:left">
+          <ul >
+            <li>
+                <b dir="auto">I) Span Extraction, e.g.,</b>
+                <ul>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226; named entity recognition (NER)</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226; aspect-based sentiment analysis (ABSA)</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226; aspect-term extraction (ATE)</li>
+                </ul>
+            </li>
+            <li>
+                <b dir="auto">II) Pair Extraction, e.g.,</b>
+                <ul >
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226; relation extraction (RE)</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226; aspect-opinion pair extraction (AOP)</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226; aspect-based sentiment triplet extraction (ASTE)</li>
+                </ul>
+            </li>
+            <li>
+                <b dir="auto">III) Hyper-pair Extraction, e.g.,</b>
+                <ul >
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226; event extraction (EE)</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226; semantic role labeling (SRL)</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226; opinion role labeling (ORL)</li>
+                </ul>
+            </li>
+          </ul>
+          <br>
+          <p style="text-align:justify">
+          Under this scheme, <b>mention spans</b> are described with <<em>Span</em>> terms and the corresponding <<em>Span Attribute</em>> labels;
+          <b>semantic relations</b> are straightforwardly denoted with <<em>Relation</em>> labels.
+
+          And all the IE structures are cast into a sequential representation:
+          <b>Linearized Hierarchical Expression (LHE)</b>.
+          For example,
+          </p><br>
+        </div>
+
+<!--      <div class="column is-four-fifths" style="width: 100%" >-->
+<!--          <p style="text-align:left">-->
+<!--            &#9654; &nbsp; <b> Syntactic-Semantic Structure Matching</b> for Text↔Non-Text Dual Learning:-->
+<!--          </p><br>-->
+        <div class="publication-image">
+          <center><img width="25%" src="./static/images/LHE.png"></center>
+        </div>
+
+        <div class="publication-image" style="text-align:left">
+        <ul dir="auto">
+              <li>
+                  <b dir="auto">&#8226;  in span extraction:</b>
+                  <ul dir="auto">
+                      <li>
+                          <em>
+                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;  { ( Span<sub>1</sub>
+                              , Attr<sub>1</sub>
+                              ) , ... , ( Span<sub>i</sub>
+                              , Attr<sub>i</sub>
+                              ) , ... }
+                          </em>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <b dir="auto">&#8226; in span extraction:</b>
+                  <ul dir="auto">
+                      <li>
+                          <em>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;   { ... , ( Span<sub>i</sub>
+                              , Attr<sub>i</sub>
+                              [ Rel<sub>k</sub>
+                              ] Span<sub>j</sub>
+                              , Attr<sub>j</sub>
+                              ) ,  ... }
+                          </em>
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <b dir="auto">&#8226; in span extraction:</b>
+                  <ul dir="auto">
+                      <li>
+                          <em>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226;  { ... , ( Span<sub>i</sub>
+                              , Attr<sub>i</sub>
+                              [ Rel<sub>k</sub>
+                              ] Span<sub>j</sub>
+                              , Attr<sub>j</sub>
+                              [ Rel<sub>m</sub>
+                              ] Span<sub>n</sub>
+                              , Attr<sub>n</sub>
+                              ,  ... ) ,  ... }
+                          </em>
+                      </li>
+                  </ul>
+              </li>
+          </ul>
+        </div>
+
+
+
+<br><br>
+        <h2 class="title is-5" style="text-align:left">2. UIE with Structure-aware Generative Language Model</h2>
+          <p style="text-align:justify">As cast above, UIE has two key common challenges of IEs:  </p>
+        <div class="publication-image" style="text-align:left">
+          <ul dir="auto">
+              <li>
+                  <p dir="auto">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226; <strong>Boundary Identification</strong>
+                      of each span terms (for UIE-element-II: span extraction).
+                  </p>
+              </li>
+              <li>
+                  <p dir="auto">
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&#8226; <strong>Long-range Dependence</strong>
+                      between different span terms (for UIE-element-I: relation extraction);
+                  </p>
+              </li>
+          </ul><br>
+        </div>
+
+        <p style="text-align:justify">We thus propose addressing the two challenges by modeling both the syntactic dependency structure and constituency structure, where the constituency syntax mostly benefits the first challenge; the dependency structure well aids the second challenge.
+        </p>
+        <div class="publication-image">
+          <center><img width="100%" src="./static/images/syntax.png"></center>
+        </div>
+        <br>
+        <p style="text-align:justify">
+          To implement the above idea, we propose learning a Latent Adaptive Structure-aware Generative Language Model for UIE, aka, LasUIE.
+        </p>
+
+
+        <div class="publication-image">
+          <center><img width="90%" src="./static/images/three-stage.png"></center>
+        </div>
+        <br>
+
+        <div class="publication-image" style="text-align:left">
+          <ul dir="auto">
+              <li>
+                  <p dir="auto">
+                     &#8226;  <strong>Stage-I: unsupervised generic pre-training</strong>
+                      :
+                  </p>
+                  <ul dir="auto">
+                      <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; generally using an off-the-shelf well-trained generative LM (GLM), e.g., BART, T5.</li>
+                  </ul>
+              </li>
+              <li>
+                  <p dir="auto">
+                     &#8226;  <strong>Stage-II: unsupervised structure-aware post-training</strong>
+                      :
+                  </p>
+                  <ul dir="auto">
+                      <li>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <em>a newly introduced procedure in this project,</em>
+                          inserted between the pre-training and fine-tuning stages for structure learning.
+                      </li>
+                  </ul>
+              </li>
+              <li>
+                  <p dir="auto">
+                     &#8226;  <strong>Stage-III: supervised task-oriented structure fine-tuning</strong>
+                      :
+                  </p>
+                  <ul dir="auto">
+                      <li>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<em>a newly introduced procedure in this project,</em>
+                          along with the task-specific finetuning.
+                      </li>
+                  </ul>
+              </li>
+          </ul><br>
+        </div>
+
+
+        <br>
+        <h2 class="title is-6" style="text-align:left">2.1. Unsupervised structure-aware post-training</h2>
+          <p style="text-align:justify">A Heterogeneous structure inductor (HSI) module is used to unsupervisedly enrich the backbone GLM with sufficient structural knowledge, reinforcing the awareness of linguistic syntax.
+          </p><br>
+
+        <div class="publication-image">
+          <center><img width="90%" src="./static/images/struct_post_train.png"></center>
+        </div>
+        <br>
+
+        <h2 class="title is-6" style="text-align:left">2.2. Supervised task-oriented structure fine-tuning</h2>
+          <p style="text-align:justify">Further adjusting (finetune) the syntactic attributes within the GLM with stochastic policy gradient algorithm by directly taking the feedback of end task performance, such that the learned structural features are most coincident with the end task needs.
+          </p><br>
+
+        <div class="publication-image">
+          <center><img width="90%" src="./static/images/struct_tune.png"></center>
+        </div>
+        <br>
+
+
+        </div>
+      </div>
+
+    </div>
+    <!--/ Paper intro. -->
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="section" style="margin-top: 0px">
+  <div class="container is-max-desktop">
+    <!-- Paper Case. -->
+    <div class="columns is-centered has-text-centered">
+
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Experiment</h2>
+
+
+        <p style="text-align:left">
+            <b>▶ The unified modeling of IE (i.e., UIE) is more effective than the traditional separate modeling of specific IE task.</b>
+          </p>
+        <div class="publication-image">
+          <center><img width="95%" src="./static/images/res1.png"></center>
+        </div></br>
+
+        <p style="text-align:left">
+            <b>▶ Either in separate or unified IE setup, integrating additional linguistic syntax features into GLM evidently improves all end task performances.
+                This proves that the syntactic structures in GLM can serve as IE task-invariant features, further contributing to UIE.
+            </b>
+          </p>
+        <div class="publication-image">
+          <center><img width="95%" src="./static/images/res2.png"></center>
+        </div></br>
+
+        <p style="text-align:left">
+            <b>▶ On the span extraction type IE (i.e., NER) the improvements from constituency syntax prevail, while the dependency type of structure features dominate the pair-wise tasks, i.e., (hyper-)pair extraction.
+                The constituency structure more tends to offer key clues for the boundary recognition; while the dependent trees are more apt to cope with the relation detection, solving long-range dependence issue.
+                When combining both of them together, all the end tasks receive the enhancements to the greatest extent.
+            </b>
+          </p>
+        <div class="publication-image">
+          <center><img width="100%" src="./static/images/res3.png"></center></br>
+        </div></br>
+
+
+        <p style="text-align:left">
+            <b>▶ It is necessary for LMs to automatically learn latent structure information for better UIE. The underlying reason of our model’s
+            improvements could be that the dynamically learned richer structural knowledge in LasUIE largely avoids the noises that are introduced in external syntax parse annotations.</b>
+          </p>
+        <div class="publication-image">
+          <center><img width="98%" src="./static/images/res4.png"></center>
+        </div></br>
+
+
+        <p style="text-align:left">
+            <b>▶ the structural fine-tuning indeed can effectively adjust the learned structural information towards task-specific.
+           Our system can correctly learn the peculiar structural bias for a specific IE task.</p>
+
+      </div>
+      </div>
+    <!--/ Paper method. -->
+  </div>
+</section>
+
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Paper poster. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Poster</h2>
+        <div class="publication-image">
+          <object data="./static/media/poster_landscape_NIPS22_LasUIE.pdf" type="application/pdf" width="100%" height="600px"></object>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper poster. -->
+  </div>
+</section>
+
+
+
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Paper poster. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Paper</h2>
+        <div class="publication-image">
+          <object data="https://arxiv.org/pdf/2304.06248.pdf" type="application/pdf" width="100%" height="1020px"></object>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper poster. -->
+  </div>
+</section>
+
+
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{fei2022lasuie,
+  author = {Fei, Hao and Wu, Shengqiong and Li, Jingye and Li, Bobo and Li, Fei and Qin, Libo and Zhang, Meishan and Zhang, Min and Chua, Tat-Seng},
+  booktitle = {Advances in Neural Information Processing Systems},
+  title = {LasUIE: Unifying Information Extraction with Latent Adaptive Structure-aware Generative Language Model},
+  pages = {15460--15475},
+  year = {2022}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+<!--    <div class="content has-text-centered">-->
+<!--      <a class="icon-link"-->
+<!--         href="./static/videos/nerfies_paper.pdf">-->
+<!--        <i class="fas fa-file-pdf"></i>-->
+<!--      </a>-->
+<!--      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>-->
+<!--        <i class="fab fa-github"></i>-->
+<!--      </a>-->
+<!--    </div>-->
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The website template credit to <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+            licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 License</a>.
+          </p>
+<!--          <p>-->
+<!--            This means you are free to borrow the <a href="https://github.com/nerfies/nerfies.github.io">source code</a> of this website,-->
+<!--            we just ask that you link back to this page in the footer.-->
+<!--            Please remember to remove the analytics code included in the header of the website which-->
+<!--            you do not want on your website.-->
+<!--          </p>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
